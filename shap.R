@@ -57,7 +57,7 @@ plot.shap.summary <- function(data_long){
   plot1 <- ggplot(data = data_long)+
     coord_flip() + 
     # sina plot: 
-    geom_sina(aes(x = variable, y = value, color = stdfvalue), size=0.75) +
+    geom_sina(aes(x = variable, y = value, color = stdfvalue), size=0.65) +
     # print the mean absolute value: 
     geom_text(data = unique(data_long[, c("variable", "mean_value"), with = F]),
               aes(x = variable, y=-Inf, label = sprintf("%.3f", mean_value)),
@@ -71,7 +71,7 @@ plot.shap.summary <- function(data_long){
                          breaks=c(0,1), labels=c("Low","High")) +
     theme_bw() + 
     theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(),
-          legend.key.width= unit(2, 'cm'), legend.position="bottom") + 
+          legend.key.width= unit(1, 'cm'), legend.position="bottom") + 
     geom_hline(yintercept = 0) + # the vertical line
     scale_y_continuous(limits = c(-x_bound, x_bound)) +
     # reverse the order of features
