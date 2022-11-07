@@ -71,7 +71,7 @@ plot.shap.summary <- function(data_long){
                          breaks=c(0,1), labels=c("Low","High")) +
     theme_bw() + 
     theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(),
-          legend.key.width= unit(0.6, 'cm'), legend.position="bottom") + 
+          legend.key.width= unit(1.3, 'cm'), legend.position="bottom") + 
     geom_hline(yintercept = 0) + # the vertical line
     scale_y_continuous(limits = c(-x_bound, x_bound)) +
     # reverse the order of features
